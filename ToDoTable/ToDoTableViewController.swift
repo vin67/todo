@@ -8,10 +8,16 @@
 
 import UIKit
 
-class ToDoTableViewController: UITableViewController {
+class ToDoTableViewController: UITableViewController  {
     
     var toDoListActive = [ToDo]()
     var toDoListCompleted = [ToDo]()
+    
+    @IBAction func addNewToDo(sender: AnyObject) {
+        var newToDo = ToDo(shortName: "New item added to list!", description: "New item", priority: "H", completed: "N", startDate: "10/12/2014", endDate: "", notes: "")
+        toDoListActive.insert(newToDo, atIndex: 0)
+        self.tableView.reloadData()
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -201,19 +207,16 @@ class ToDoTableViewController: UITableViewController {
         // Get the new view controller using [segue destinationViewController].
         // Pass the selected object to the new view controller.
     
-    
         var secondScene = segue.destinationViewController as InfoViewController
         var index = self.tableView.indexPathForSelectedRow()
         
-            if index!.section == 0 {
+        if index!.section == 0 {
             let selectedToDo = toDoListActive[index!.row]
             secondScene.currentToDo = selectedToDo
         }
         else {
             let selectedToDo = toDoListActive[index!.row]
             secondScene.currentToDo = selectedToDo
-            
         }
-
     }
 }

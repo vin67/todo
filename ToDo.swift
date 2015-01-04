@@ -17,4 +17,5 @@ struct ToDo {
     var startDate : String
     var endDate : String
     var notes : String
+    
 }

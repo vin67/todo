@@ -8,7 +8,7 @@
 
 import UIKit
 
-class InfoViewController: UIViewController {
+class InfoViewController: UIViewController, UITextFieldDelegate {
     
     var currentToDo : ToDo?
 
@@ -20,20 +20,47 @@ class InfoViewController: UIViewController {
     @IBOutlet weak var endDataField: UITextField!
     @IBOutlet weak var notesField: UITextView!
     
+    
+    @IBAction func shortNameUpdate(sender: AnyObject) {
+        currentToDo!.shortName = shortNameField.text
+    }
+    
+    @IBAction func submitButton(sender: AnyObject) {
+        currentToDo!.shortName = shortNameField.text
+        currentToDo!.description = descriptionField.text
+        currentToDo!.priority = priorityField.text
+        currentToDo!.completed = completedField.text
+        currentToDo!.startDate = startDateField.text
+        currentToDo!.endDate = endDataField.text
+        currentToDo!.notes = notesField.text
+    }
+
+    
+    func textFieldShouldReturn(textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        return false
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-    shortNameField.text = currentToDo!.shortName
-    descriptionField.text = currentToDo!.description
-    priorityField.text = currentToDo!.priority
-    completedField.text = currentToDo!.completed
-    startDateField.text = currentToDo!.startDate
-    endDataField.text = currentToDo!.endDate
-    notesField.text = currentToDo!.notes
         
+        shortNameField.text = currentToDo!.shortName
+        descriptionField.text = currentToDo!.description
+        priorityField.text = currentToDo!.priority
+        completedField.text = currentToDo!.completed
+        startDateField.text = currentToDo!.startDate
+        endDataField.text = currentToDo!.endDate
+        notesField.text = currentToDo!.notes
+        
+
         // Do any additional setup after loading the view.
     }
 
+    override func touchesBegan(touches: NSSet, withEvent event: UIEvent) {
+        self.view.endEditing(true)
+    }
+    
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
