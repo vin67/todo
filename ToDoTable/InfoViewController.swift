@@ -20,10 +20,10 @@ class InfoViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var endDataField: UITextField!
     @IBOutlet weak var notesField: UITextView!
     
-    
     @IBAction func shortNameUpdate(sender: AnyObject) {
         currentToDo!.shortName = shortNameField.text
     }
+    
     
     @IBAction func submitButton(sender: AnyObject) {
         currentToDo!.shortName = shortNameField.text
@@ -34,6 +34,7 @@ class InfoViewController: UIViewController, UITextFieldDelegate {
         currentToDo!.endDate = endDataField.text
         currentToDo!.notes = notesField.text
     }
+    
 
     
     func textFieldShouldReturn(textField: UITextField) -> Bool {
@@ -66,9 +67,9 @@ class InfoViewController: UIViewController, UITextFieldDelegate {
         // Dispose of any resources that can be recreated.
     }
     
-
     /*
-    // MARK: - Navigation
+    
+        // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
@@ -76,5 +77,11 @@ class InfoViewController: UIViewController, UITextFieldDelegate {
         // Pass the selected object to the new view controller.
     }
     */
-
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if segue.identifier == "SaveToDo" {
+            currentToDo = ToDo(shortName: shortNameField.text, description: descriptionField.text, priority: priorityField.text, completed: completedField.text, startDate: startDateField.text, endDate: endDataField.text, notes: notesField.text)
+            
+        }
+    }
 }
