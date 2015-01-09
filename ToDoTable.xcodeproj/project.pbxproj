@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		6A6B3B4F1A5E608E002CC557 /* SampleData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A6B3B4E1A5E608E002CC557 /* SampleData.swift */; };
+		6A6B3B521A5FBFCA002CC557 /* Screen Shot 2015-01-09 at 6.49.05 PM.png in Resources */ = {isa = PBXBuildFile; fileRef = 6A6B3B501A5FBFCA002CC557 /* Screen Shot 2015-01-09 at 6.49.05 PM.png */; };
+		6A6B3B531A5FBFCA002CC557 /* Screen Shot 2015-01-09 at 6.49.15 PM.png in Resources */ = {isa = PBXBuildFile; fileRef = 6A6B3B511A5FBFCA002CC557 /* Screen Shot 2015-01-09 at 6.49.15 PM.png */; };
 		6A80C78F1A58728600E501FF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6A80C78D1A58728600E501FF /* Main.storyboard */; };
 		6AC0BE8E1A56392600DE5927 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AC0BE8D1A56392600DE5927 /* AppDelegate.swift */; };
 		6AC0BE951A56392600DE5927 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6AC0BE941A56392600DE5927 /* Images.xcassets */; };
@@ -30,6 +32,8 @@
 
 /* Begin PBXFileReference section */
 		6A6B3B4E1A5E608E002CC557 /* SampleData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SampleData.swift; sourceTree = "<group>"; };
+		6A6B3B501A5FBFCA002CC557 /* Screen Shot 2015-01-09 at 6.49.05 PM.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Screen Shot 2015-01-09 at 6.49.05 PM.png"; path = "../../../Screen Shot 2015-01-09 at 6.49.05 PM.png"; sourceTree = "<group>"; };
+		6A6B3B511A5FBFCA002CC557 /* Screen Shot 2015-01-09 at 6.49.15 PM.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Screen Shot 2015-01-09 at 6.49.15 PM.png"; path = "../../../Screen Shot 2015-01-09 at 6.49.15 PM.png"; sourceTree = "<group>"; };
 		6A80C78E1A58728600E501FF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		6AC0BE881A56392600DE5927 /* ToDoTable.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ToDoTable.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6AC0BE8C1A56392600DE5927 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -99,6 +103,8 @@
 		6AC0BE8B1A56392600DE5927 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				6A6B3B501A5FBFCA002CC557 /* Screen Shot 2015-01-09 at 6.49.05 PM.png */,
+				6A6B3B511A5FBFCA002CC557 /* Screen Shot 2015-01-09 at 6.49.15 PM.png */,
 				6AC0BE8C1A56392600DE5927 /* Info.plist */,
 			);
 			name = "Supporting Files";
@@ -204,6 +210,8 @@
 				6A80C78F1A58728600E501FF /* Main.storyboard in Resources */,
 				6AC0BE981A56392600DE5927 /* LaunchScreen.xib in Resources */,
 				6AC0BE951A56392600DE5927 /* Images.xcassets in Resources */,
+				6A6B3B521A5FBFCA002CC557 /* Screen Shot 2015-01-09 at 6.49.05 PM.png in Resources */,
+				6A6B3B531A5FBFCA002CC557 /* Screen Shot 2015-01-09 at 6.49.15 PM.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
