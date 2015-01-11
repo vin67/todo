@@ -24,19 +24,6 @@ class InfoViewController: UIViewController, UITextFieldDelegate {
         currentToDo!.shortName = shortNameField.text
     }
     
-    
-    @IBAction func submitButton(sender: AnyObject) {
-        currentToDo!.shortName = shortNameField.text
-        currentToDo!.description = descriptionField.text
-        currentToDo!.priority = priorityField.text
-        currentToDo!.completed = completedField.text
-        currentToDo!.startDate = startDateField.text
-        currentToDo!.endDate = endDataField.text
-        currentToDo!.notes = notesField.text
-    }
-    
-
-    
     func textFieldShouldReturn(textField: UITextField) -> Bool {
         textField.resignFirstResponder()
         return false

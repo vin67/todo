@@ -35,6 +35,15 @@ class ToDoTableViewController: UITableViewController  {
         
     }
     
+    @IBAction func editToDoViewController(sender: UIBarButtonItem) {
+        if (self.tableView.editing) {
+            sender.title = "Edit"
+            self.tableView.setEditing(false, animated: true)
+        } else {
+            sender.title = "Done"
+            self.tableView.setEditing(true, animated: true)
+        }    }
+    
     @IBAction func saveToDoViewController(segue:UIStoryboardSegue) {
         
         let toDoViewController = segue.sourceViewController as InfoViewController
@@ -51,10 +60,18 @@ class ToDoTableViewController: UITableViewController  {
     @IBAction func addNewToDo(sender: AnyObject) {
         var newToDo = ToDo(shortName: "New item added to list!", description: "New item", priority: "H", completed: "N", startDate: "10/12/2014", endDate: "", notes: "")
         toDoListActive.insert(newToDo, atIndex: 0)
+        
+        println("=================================")
+        
+        println("toDoListActive.count \(toDoListActive.count)")
+        println("toDoListCompleted.count \(toDoListCompleted.count)")
         self.tableView.reloadData()
     }
 
-
+//override func editButtonItem() -> UIBarButtonItem {
+//        return self.
+//    }
+  
     // MARK: - Table view data source
 
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
@@ -130,18 +147,35 @@ class ToDoTableViewController: UITableViewController  {
     }
     */
 
-    /*
+    
     // Override to support editing the table view.
     override func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
-        if editingStyle == .Delete {
-            // Delete the row from the data source
-            tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: .Fade)
-        } else if editingStyle == .Insert {
-            // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-        }    
-    }
-    */
+        
+        var selectedToDo: ToDo
+        
+        if editingStyle == UITableViewCellEditingStyle.Delete {
+        
+            
+            if indexPath.section == 0 {
+                toDoListActive.removeAtIndex(indexPath.row)
+            }
+            else {
+                toDoListCompleted.removeAtIndex(indexPath.row)
+            }
 
+            tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: UITableViewRowAnimation.Automatic)
+            
+            println("=================================")
+
+            println("indexPath.row \(indexPath.row)")
+            println("indexPath.section \(indexPath.section)")
+            println("toDoListActive.count \(toDoListActive.count)")
+            println("toDoListCompleted.count \(toDoListCompleted.count)")
+
+        }
+    }
+
+    
     /*
     // Override to support rearranging the table view.
     override func tableView(tableView: UITableView, moveRowAtIndexPath fromIndexPath: NSIndexPath, toIndexPath: NSIndexPath) {
@@ -173,7 +207,7 @@ class ToDoTableViewController: UITableViewController  {
             secondScene.currentToDo = selectedToDo
         }
         else {
-            let selectedToDo = toDoListActive[index!.row]
+            let selectedToDo = toDoListCompleted[index!.row]
             secondScene.currentToDo = selectedToDo
         }
     }
