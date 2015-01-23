@@ -18,4 +18,9 @@ struct ToDo {
     var endDate : String
     var notes : String
     
+    var clientOrg : String
+    var clientDomain : String
+    var clientProject : String
+    var clientPerson : String
+    
 }

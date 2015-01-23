@@ -58,7 +58,7 @@ class ToDoTableViewController: UITableViewController  {
     }
     
     @IBAction func addNewToDo(sender: AnyObject) {
-        var newToDo = ToDo(shortName: "New item added to list!", description: "New item", priority: "H", completed: "N", startDate: "10/12/2014", endDate: "", notes: "")
+        var newToDo = ToDo(shortName: "", description: "", priority: "", completed: "", startDate: "", endDate: "", notes: "", clientOrg: "", clientDomain: "", clientProject: "", clientPerson: "")
         toDoListActive.insert(newToDo, atIndex: 0)
         
         println("=================================")

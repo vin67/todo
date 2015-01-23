@@ -20,6 +20,11 @@ class InfoViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var endDataField: UITextField!
     @IBOutlet weak var notesField: UITextView!
     
+    @IBOutlet weak var clientOrgField: UITextField!
+    @IBOutlet weak var clientDomainField: UITextField!
+    @IBOutlet weak var clientProjectField: UITextField!
+    @IBOutlet weak var clientPersonField: UITextField!
+    
     @IBAction func shortNameUpdate(sender: AnyObject) {
         currentToDo!.shortName = shortNameField.text
     }
@@ -39,7 +44,10 @@ class InfoViewController: UIViewController, UITextFieldDelegate {
         startDateField.text = currentToDo!.startDate
         endDataField.text = currentToDo!.endDate
         notesField.text = currentToDo!.notes
-        
+        clientOrgField.text = currentToDo!.clientOrg
+        clientDomainField.text = currentToDo!.clientDomain
+        clientProjectField.text = currentToDo!.clientProject
+        clientPersonField.text = currentToDo!.clientPerson
 
         // Do any additional setup after loading the view.
     }
@@ -67,7 +75,7 @@ class InfoViewController: UIViewController, UITextFieldDelegate {
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if segue.identifier == "SaveToDo" {
-            currentToDo = ToDo(shortName: shortNameField.text, description: descriptionField.text, priority: priorityField.text, completed: completedField.text, startDate: startDateField.text, endDate: endDataField.text, notes: notesField.text)
+            currentToDo = ToDo(shortName: shortNameField.text, description: descriptionField.text, priority: priorityField.text, completed: completedField.text, startDate: startDateField.text, endDate: endDataField.text, notes: notesField.text, clientOrg: clientOrgField.text, clientDomain: clientDomainField.text, clientProject: clientProjectField.text, clientPerson: clientPersonField.text)
             
         }
     }
